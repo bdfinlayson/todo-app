@@ -1,0 +1,29 @@
+<h1>ToDo</h1>
+<p>Welcome to ToDo Application!</p>
+
+<div class="container">
+  <% if @tasks.empty? %>
+    <span>There are no tasks</span>
+  <% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Created At</th>
+          <th>Note</th>
+          <th>Completed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td><%= task.title %></td>
+            <td><%= task.created_at %></td>
+            <td><%= task.note %></td>
+            <td><%= task.completed %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
